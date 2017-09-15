@@ -33,7 +33,7 @@ public class MarshmallowMonster
 	{
 		return eyeCount;
 	}
-	public int geArmCount()
+	public int getArmCount()
 	{
 		return armCount;
 	}
@@ -70,7 +70,7 @@ public class MarshmallowMonster
 	
 	public String toString()
 	{
-		String description = "I am a monster, my name is " + name + ", I have " + eyeCount + " eyes and only " ;
+		String description = "I am a monster, my name is " + name + ", I have " + eyeCount + " eye and only " ;
 		description += tentacleAmount + " tenticles but I have " + armCount + " arms!." + hasBloop + "tells you";
 		description += " if I have a bloop";
 		return description;	
