@@ -20,12 +20,8 @@ public class MonsterController
 	
 	private void interactWithMonster(MarshmallowMonster currentMonster)
 	{
-		Scanner myScanner = new Scanner(System.in);
-		System.out.println(currentMonster.getName() + " wants to know how many eyes you want to eat, please type in how many");
-		int consumed = myScanner.nextInt();
-		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
-		System.out.println(currentMonster);
 		
+		Scanner myScanner = new Scanner(System.in);
 		System.out.println("How many arms are you interested in eating? I have " + currentMonster.getArmCount());
 		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
@@ -70,6 +66,24 @@ public class MonsterController
 			currentMonster.setEyeCount(currentMonster.getEyeCount() - eyeEat);
 			System.out.println("Cool, now I only have this many eyes " + currentMonster.getEyeCount());
 		}
+		
+		System.out.println("How many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
+		double food = myScanner.nextDouble();
+		
+		if(food == currentMonster.getTentacleAmount())
+		{
+			System.out.println("You ate all my tentacles!!!");
+		}
+		else
+		{
+			System.out.println("More Likely");
+		}
+		
+		
+		
+		
+		
+		
 		
 		myScanner.close();
 	}
