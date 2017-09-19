@@ -27,7 +27,7 @@ public class MonsterController
 		System.out.println(currentMonster);
 		
 		System.out.println("How many arms are you interested in eating? I have " + currentMonster.getArmCount());
-		//consumed =myScanner.nextInt();
+		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
 		
 		if(armEat == 0)
@@ -36,8 +36,7 @@ public class MonsterController
 		}
 		else if(armEat < 0)
 		{
-			System.out.println("Reality is hard for you - it is impossible to eat a negative amount");
-			
+			System.out.println("Reality is hard for you - it is impossible to eat a negative amount");	
 		}
 		else if(armEat - currentMonster.getArmCount() > 0)
 		{
@@ -47,6 +46,29 @@ public class MonsterController
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
 			System.out.println("OK, now I have this many arms " + currentMonster.getArmCount());
+		}
+		
+		
+		System.out.println("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
+		//consumed  = myScanner.nextInt();
+		int eyeEat = myScanner.nextInt();
+		
+		if(eyeEat == 0)
+		{
+			System.out.println("Fine, more eyes for me...");	
+		}
+		else if(eyeEat < 0)
+		{
+			System.out.println("It doesn't work that way");
+		}
+		else if(eyeEat - currentMonster.getEyeCount() > 0	)
+		{
+			System.out.println("I don't have that many eyes, try again.");
+		}
+		else
+		{
+			currentMonster.setEyeCount(currentMonster.getEyeCount() - eyeEat);
+			System.out.println("Cool, now I only have this many eyes " + currentMonster.getEyeCount());
 		}
 		
 		myScanner.close();
