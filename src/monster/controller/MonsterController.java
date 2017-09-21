@@ -17,6 +17,7 @@ public class MonsterController
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
 		System.out.println(basic);
+		popup.displayText(basic.toString()); 
 		MarshmallowMonster Hobert = new MarshmallowMonster("Hobert", 1, 2, 3.5, true);
 		System.out.println(Hobert);
 		System.out.println("I am going to eat one of Hobert's arms");

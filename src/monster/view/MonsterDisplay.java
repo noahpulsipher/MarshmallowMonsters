@@ -12,8 +12,11 @@ public class MonsterDisplay
 	
 	public String getResponse(String questionToDisplay)
 	{
+		
 		String answer = "";
+		
 		answer += JOptionPane.showInputDialog(null, questionToDisplay);
+		
 		return answer;
 	}
 }
