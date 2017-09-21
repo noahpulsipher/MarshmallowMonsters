@@ -16,13 +16,16 @@ public class MonsterController
 	public void start()
 	{
 		MarshmallowMonster basic = new MarshmallowMonster();
-		System.out.println(basic);
+//		System.out.println(basic);
 		popup.displayText(basic.toString()); 
 		MarshmallowMonster Hobert = new MarshmallowMonster("Hobert", 1, 2, 3.5, true);
-		System.out.println(Hobert);
-		System.out.println("I am going to eat one of Hobert's arms");
+//		System.out.println(Hobert);
+		popup.displayText(Hobert.toString());
+//		System.out.println("I am going to eat one of Hobert's arms");
+		popup.displayText("I am going to eat one of Hobert's arms");
 		Hobert.setArmCount(Hobert.getArmCount () - 1);
-		System.out.println(Hobert);
+//		System.out.println(Hobert);
+		popup.displayText(Hobert.toString());
 		
 		interactWithMonster(Hobert);
 	}
@@ -31,9 +34,15 @@ public class MonsterController
 	{
 		
 		Scanner myScanner = new Scanner(System.in);
-		System.out.println("How many arms are you interested in eating? I have " + currentMonster.getArmCount());
+//		System.out.println("How many arms are you interested in eating? I have " + currentMonster.getArmCount());
+		int consumed;
+		String response = popup.getResponse(currentMonster.getName() +"wants to know how many eyes you want to eat, please type in how many");
+		
+		consumed = Integer.parseInt(response);
+		
 		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
+		
 		
 		if(armEat == 0)
 		{
@@ -97,4 +106,41 @@ public class MonsterController
 		
 		myScanner.close();
 	}
+	
+	
+	
+	//Helper methods
+	private boolean isValidInteger(String sample)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Integer.parseInt(sample);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("You need to input an int, " + sample + " is not valid.");	
+		}
+		
+		
+		
+		
+		return valid;
+	
+	
+	
+	
+	}
+
+
+
+
+
+
 }
+
+
+
+
