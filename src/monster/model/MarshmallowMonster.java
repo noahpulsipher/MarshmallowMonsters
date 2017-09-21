@@ -77,3 +77,4 @@ public class MarshmallowMonster
 	}
 }
 
+//this class takes the int and double and boolean and gives the value to an actual thing like eyes or arms.

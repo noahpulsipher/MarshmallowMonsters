@@ -39,48 +39,45 @@ public class MonsterController
 		String response = popup.getResponse(currentMonster.getName() +"wants to know how many eyes you want to eat, please type in how many");
 		
 		if(isValidInteger(response))
-		consumed = Integer.parseInt(response);
+			{
+			consumed = Integer.parseInt(response);
+			}
+		currentMonster.setEyeCount(currentMonster.getEyeCount() - consumed);
+		popup.displayText("I have this many eyes " + currentMonster.getEyeCount());
 		//int consumed = myScanner.nextInt();
-		
 		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
-		{
-			consumed = Integer.parseInt(response);
-		}
-		
 		
 		if(armEat == 0)
 		{
 			//System.out.println("Not hungry? Oh, so sad...");
-			popup.displayText(currentMonster.toString());
-			popup.getResponse("Not hungry? Oh, so sad...");
+			popup.displayText("Not hungry? Oh, so sad...");
+			
 		}
 		else if(armEat < 0)
 		{
 			//System.out.println("Reality is hard for you - it is impossible to eat a negative amount");	
-			popup.displayText(currentMonster.toString());
-			popup.getResponse("Reality is hardd for you - it is impossible to eat a negative amount");
+			popup.displayText("Reality is hard for you - it is impossibld to eat a negative amount");
+			
 		}
 		else if(armEat - currentMonster.getArmCount() > 0)
 		{
 			//System.out.println("You are not allowed to eat more than exist on me :/ XD");
-			popup.displayText(currentMonster.toString());
-			popup.getResponse("You are not allowed to eat more than exists on me XD");
+			popup.displayText("You are not allowed to eat more than exists on me XD");
 		}
 		else
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - armEat);
 			//System.out.println("OK, now I have this many arms " + currentMonster.getArmCount());
-			popup.displayText(currentMonster.toString());
-			popup.getResponse("Ok, now I haave this many arms " + currentMonster.getArmCount());
+			popup.displayText("Ok, now I have this many arms " + currentMonster.getArmCount());
 		}
 		
 		
 		//System.out.println("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
 		//consumed  = myScanner.nextInt();
 		
-		popup.displayText(currentMonster.toString());
-		popup.getResponse("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
+		popup.displayText("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
+		
 		int eyeEat = myScanner.nextInt();
 		
 		if(eyeEat == 0)
@@ -201,7 +198,7 @@ public class MonsterController
 		return valid;
 	}
 }
-
+//This class is where all the helper methods and former system.out.println methods were. It catches bad responses so that the program doesn't crash.
 
 
 

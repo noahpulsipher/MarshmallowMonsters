@@ -20,4 +20,4 @@ public class MonsterDisplay
 		return answer;
 	}
 }
-
+//this class makes a graphic user interface for the person who is interacting with the program.
