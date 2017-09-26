@@ -73,6 +73,10 @@ public class MonsterController
 		//consumed = myScanner.nextInt();
 		int armEat = myScanner.nextInt();
 		
+		
+		
+		
+		
 		if(armEat == 0)
 		{
 			//System.out.println("Not hungry? Oh, so sad...");
@@ -101,8 +105,13 @@ public class MonsterController
 		//System.out.println("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
 		//consumed  = myScanner.nextInt();
 		
-		popup.displayText("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
+		String eyeResponse = popup.getResponse("How many eyes do you want to eat? I have " + currentMonster.getEyeCount());
 		
+		while(!isValidInteger(eyeResponse));
+		{
+			popup.displayText("nope");
+			eyeResponse = popup.getResponse("Type in something better");
+		}
 		int eyeEat = myScanner.nextInt();
 		
 		if(eyeEat == 0)
@@ -136,6 +145,15 @@ public class MonsterController
 		
 		double food = 0.0;
 		String tentacleResponse = popup.getResponse("how many tentacles do you want to eat? I have " + currentMonster.getTentacleAmount());
+		
+		while(!isValidInteger(tentacleResponse));
+		{
+			popup.displayText("doesn't work");
+			tentacleResponse = popup.getResponse("Type in something better");
+		}
+		
+		
+		
 		if(isValidDouble(tentacleResponse))
 		{
 			food = Double.parseDouble(tentacleResponse);
