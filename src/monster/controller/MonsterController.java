@@ -1,5 +1,7 @@
 package monster.controller;
 
+import java.util.List;
+import java.util.ArrayList;
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
@@ -7,14 +9,15 @@ import monster.view.MonsterDisplay;
 public class MonsterController 
 {
 	private MonsterDisplay popup;
+	private List<MarshmallowMonster> monsterList;
 	
 	public MonsterController()
 	{
 		popup = new MonsterDisplay();
+		monsterList = new ArrayList<MarshmallowMonster>();
 	}
 	
 	public void start()
-	
 	{
 		int count = 0;
 //		while(count < 10)
@@ -42,6 +45,9 @@ public class MonsterController
 		Hobert.setArmCount(Hobert.getArmCount () - 1);
 //		System.out.println(Hobert);
 		popup.displayText(Hobert.toString());
+		
+		monsterList.add(basic);
+		monsterList.add(Hobert);
 		
 		interactWithMonster(Hobert);
 	}
@@ -263,5 +269,5 @@ public class MonsterController
 }
 //This class is where all the helper methods and former system.out.println methods were. It catches bad responses so that the program doesn't crash.
 
-
+  
 
