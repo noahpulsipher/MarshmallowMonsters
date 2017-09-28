@@ -48,9 +48,29 @@ public class MonsterController
 		
 		monsterList.add(basic);
 		monsterList.add(Hobert);
+		useList();
 		
 		interactWithMonster(Hobert);
 	}
+	private void useList()
+	{
+		for (int index = 0; index <monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+			String updateName = popup.getResponse("What should my new name be?");
+			currentMonster.setName(updateName);
+			popup.displayText("My new name is " + currentMonster.getName());
+		}
+		
+		for (MarshmallowMonster current : monsterList)
+		{
+			popup.displayText("My name is " + current.getName());
+		}
+		
+	}
+	
+	
 	
 	private void interactWithMonster(MarshmallowMonster currentMonster)
 	{
